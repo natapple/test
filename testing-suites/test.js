@@ -14,6 +14,7 @@ var page_actions = require('page_actions')();
 
 var homeModule = require('home_test')(true);
 var loginModule = require('login_test')(true);
+var signupModule = require('signup_test')(true);
 var logoutModule = require('logout_test')(true);
 var directoryModule = require('directory_test')(true);
 var featuredModule = require('featured_test')(true);
@@ -25,6 +26,7 @@ var modules = {};
 
 env.registerModule(homeModule);
 env.registerModule(loginModule);
+env.registerModule(signupModule);
 env.registerModule(logoutModule);
 env.registerModule(directoryModule);
 env.registerModule(featuredModule);
@@ -46,11 +48,12 @@ var runTest = function(testModule, numOfTests) {
     }
 }
 
-runTest(homeModule, 3);
-runTest(directoryModule, 9);
-runTest(alltapesModule, 7);
-runTest(featuredModule, 4);
-runTest(exploreModule, 4);
-runTest(userModule, 1);
-runTest(loginModule, 2);
+runTest(loginModule, 6);
+runTest(userModule, 3);
 runTest(logoutModule, 2);
+runTest(directoryModule, 19);
+runTest(homeModule, 3);
+runTest(featuredModule, 4 + 8*env.X_pages);
+runTest(exploreModule, 4 + 8*env.X_pages);
+runTest(alltapesModule, 7 + 8*env.X_pages);
+runTest(signupModule, 6);

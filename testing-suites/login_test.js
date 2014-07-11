@@ -11,6 +11,10 @@ var LoginTest = function(assert) {
 
         page_actions.goToLoginAction(casper, test, start, function(){
             if(assert) test.assertExists('form#new_user', 'Login form is found');
+            if(assert) test.assertExists('#user_email', 'Email input is found');
+            if(assert) test.assertExists('#remember', 'Remember input is found');
+            if(assert) test.assertExists('#user_password', 'Password input is found');
+            if(assert) test.assertElementCount(".auth_provider", 2, "Found the 2 authentication providers");
             casper.fill('form#new_user', {
                 'user[email]': env.username,
                 'user[password]':  env.password

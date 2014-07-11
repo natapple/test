@@ -28,12 +28,16 @@ var PageActions = function() {
         goToPageAction(casper, test, env.server_url + env.login_page, start, callback);
     }
 
+    var goToSignupAction = function(casper, test, start, callback) {
+        goToPageAction(casper, test, env.server_url + env.signup_page, start, callback);
+    }
+
     var goToFeaturedAction = function(casper, test, start, callback) {
         goToPageAction(casper, test, env.server_url+ env.featured_page, start, callback);
     }
 
-    var goToAlltapesAction = function(casper, test, start, callback) {
-        goToPageAction(casper, test, env.server_url+ env.all_page, start, callback);
+    var goToAlltapesAction = function(casper, test, start, callback, page) {
+        goToPageAction(casper, test, env.server_url+ env.all_page + (page ? 'most-recent/' + page : ''), start, callback);
     }
 
     var goToExploreAction = function(casper, test, start, callback) {
@@ -49,6 +53,7 @@ var PageActions = function() {
         goToHomepageAction : goToHomepageAction,
         goToDirectoryAction : goToDirectoryAction,
         goToLoginAction : goToLoginAction,
+        goToSignupAction : goToSignupAction,
         goToFeaturedAction : goToFeaturedAction,
         goToAlltapesAction : goToAlltapesAction,
         goToExploreAction : goToExploreAction,
