@@ -6,9 +6,9 @@ var Environment = function() {
 
     return {
         registerModule: registerModule,
-        'server_url' : 'http://localhost:3000/',
-        'username' : 'chris@tape.ly',
-        'password' : '123456',
+        'server_url' : 'http://mytape-development2.herokuapp.com/',
+        'username' : 'team@tape.ly',
+        'password' : 'LB3H2G2z',
         'login_page' : 'login/',
         'signup_page' : 'register/',
         'directory_page' : 'directory/',
